@@ -22,7 +22,7 @@ class Venta:
 
 class RegistroVentas:
     def __init__(self): #Constructor
-        self.ventas = []
+        self.ventas = [] 
 
     def AgregarVenta(self, venta):
         self.ventas.append(venta)
@@ -54,41 +54,42 @@ def GenerarReporteVentas(ventas):
 # Aqui se genera el reporte de inventario
 def GenerarReporteInventario(inventario):
     inventario.MostrarInventario()
-
+#----------------CREAMOS LOS OBJETOS---------------------
 
 producto1 = Producto("Doritos", 2.5, 100)
 producto2 = Producto("InkaChips", 6.0, 150)
 producto3 = Producto("Gomitas", 1.2, 200)
 
-# Crear inventario y agregar productos
+# Creamos el inventario y agregamos los productos
 inventario = Inventario()
 inventario.AgregarProducto(producto1)
 inventario.AgregarProducto(producto2)
+inventario.AgregarProducto(producto3)
 
-# Mostrar inventario
+# Mostramos el  inventario
 print("Inventario actual: ")
 GenerarReporteInventario(inventario)
 
-# Registrar venta
+# Registramos cada venta 
 venta1 = Venta(producto1, 5)
 venta2 = Venta(producto2, 10)
 venta3 = Venta(producto3, 2)
 
-# Registro de ventas
+# Registramos las ventas
 Rventa = RegistroVentas()
 Rventa.AgregarVenta(venta1)
 Rventa.AgregarVenta(venta2)
 Rventa.AgregarVenta(venta3)
 
-# Mostrar ventas
+# Mostramos las ventas
 print("\nVentas realizadas:")
 Rventa.MostrarVentas()
 
-# Generar reporte de ventas
+# Generamos el reporte de ventas
 print("\nReporte de ventas:")
 GenerarReporteVentas(Rventa.ventas)
 
-# Realizar un pedido y notificar al cliente
+# Realizamos un pedido y notificamos al cliente
 Pedido1cliente1 = Pedido("Juan", [producto1, producto2])
 Regpedido= RegistroPedidos()
 Regpedido.AgregarPedido(Pedido1cliente1)
